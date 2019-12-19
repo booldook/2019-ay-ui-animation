@@ -9,9 +9,9 @@
 	<style>
 		.box {width: 200px; height: 200px;}
 		#box1 {background-color: forestgreen; position: fixed; top: 50%; left: 50%;
-		animation-name: ani; /* keyframe 이름 */
-		animation-duration: 5s; /* Animation 속도 */
-		animation-iteration-count: 1; /* infinite:무한반복 */
+		animation-name: rotate; /* keyframe 이름 */
+		animation-duration: 2s; /* Animation 속도 */
+		animation-iteration-count: infinite; /* infinite:무한반복 */
 		animation-delay: 3s; /* 시작전에 delay */
 		/*
 		animation-direction:
@@ -26,7 +26,8 @@
 		backwards 기본값-처음으로 돌아감 
 		forwards : 마지막 프레임에서 멈춤
 		*/
-		animation-fill-mode: forwards; 
+		animation-fill-mode: forwards;
+		animation-timing-function: linear;
 		}
 
 		@keyframes ani {
@@ -36,7 +37,11 @@
 			75% {left: 80%; top: 80%;}
 			100% {left: 80%; top: 0;}
 		}
-		
+
+		@keyframes rotate {
+			0% {transform: rotate(0deg)}
+			100% {transform: rotate(360deg)}
+		}
 	</style>
 </head>
 <body>
