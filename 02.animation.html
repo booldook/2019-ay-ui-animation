@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Animation을 배워보자</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<style>
+		.box {width: 200px; height: 200px;}
+		#box1 {background-color: forestgreen; position: fixed; top: 50%; left: 50%;
+		animation-name: ani; /* keyframe 이름 */
+		animation-duration: 5s; /* Animation 속도 */
+		animation-iteration-count: 1; /* infinite:무한반복 */
+		animation-delay: 3s; /* 시작전에 delay */
+		/*
+		animation-direction:
+		normal - 기본값(원래대로)
+		reverse - 거꾸로 진행
+		alternate - 반복(원래, 거꾸로)진행
+		alternate-reverse
+		*/
+		animation-direction: normal;
+		/* 
+		animation-fill-mode: 
+		backwards 기본값-처음으로 돌아감 
+		forwards : 마지막 프레임에서 멈춤
+		*/
+		animation-fill-mode: forwards; 
+		}
+
+		@keyframes ani {
+			0% {left: 50%; top: 50%;}
+			25% {left: 0; top: 0;}
+			50% {left: 0; top: 80%;}
+			75% {left: 80%; top: 80%;}
+			100% {left: 80%; top: 0;}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box" id="box1"></div>
+</body>
+</html>
